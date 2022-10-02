@@ -1,4 +1,4 @@
-<button class="btn btn-primary" [disabled]="!allowNewServer"> Aggiungi Server</button>
+<button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()" > Aggiungi Server</button>
 
 <!--
 Property binding lega un elemento sempre del component.ts a un attributo del DOM che fa parte del component.html.
@@ -6,7 +6,13 @@ L'attributo interessato deve essere racchiuso tra parentesi quadre, così Angula
 Così facendo posso rendere dinamica una proprietà
 
 -->
+<!--<p> {{allowNewServer}}</p> -->
+<!--<p [innerHTML]="allowNewServer"></p>-->
 
+
+
+<!-- Per usare l'event Binding dobbiamo mettere in nome dell'evento tra parentesi tonde e poi associarlo all'elemento che ci interessa-->
+<p> {{serverCreationStatus}}</p>
 
 <app-server></app-server>
 <app-server></app-server>
