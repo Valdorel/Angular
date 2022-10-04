@@ -1,8 +1,12 @@
+<label>Server Name</label>
+<input type="text" class="form-control" (input)="onUpdateServerName($event)">
+<p>{{serverName}}</p>
+<hr><br>
 <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()" > Aggiungi Server</button>
 
 <!--
 Property binding lega un elemento sempre del component.ts a un attributo del DOM che fa parte del component.html.
-L'attributo interessato deve essere racchiuso tra parentesi quadre, così Angular sa associare l'attributo.
+L'attributo interessato deve essere racchiuso tra parentesi quadre [], così Angular sa associare l'attributo.
 Così facendo posso rendere dinamica una proprietà
 
 -->
@@ -10,8 +14,8 @@ Così facendo posso rendere dinamica una proprietà
 <!--<p [innerHTML]="allowNewServer"></p>-->
 
 
-
-<!-- Per usare l'event Binding dobbiamo mettere in nome dell'evento tra parentesi tonde e poi associarlo all'elemento che ci interessa o il codice che vogliamo eseguire-->
+<!-- Per usare l'event Binding dobbiamo mettere in nome dell'evento tra parentesi tonde () e poi associarlo all'elemento che ci interessa o il codice che vogliamo eseguire-->
+<br>
 <p> {{serverCreationStatus}}</p>
 
 <app-server></app-server>
