@@ -1,5 +1,15 @@
 <label>Server Name</label>
-<input type="text" class="form-control" (input)="onUpdateServerName($event)">
+<!--<input type="text" class="form-control" (input)="onUpdateServerName($event)">-->
+
+
+<!--Per poter utilizzare il 2-way-databinding è necessario importare nell'AppModule il FormsModule.
+    IL Two-way-binding permette di andare a modificare sia lato front che back(in questo caso parliamo del component.ts) il
+    valore associato alla variabile: andando a modificare l'imput, si modificherà la variabile, e se si va a modificare la variabile
+    automaticamente si modifica anche il valore dell'input. Tutto in maniera automatica e a runtime.
+-->
+
+<input type="text" class="form-control" [(ngModel)]="serverName">
+
 <p>{{serverName}}</p>
 <hr><br>
 <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()" > Aggiungi Server</button>
