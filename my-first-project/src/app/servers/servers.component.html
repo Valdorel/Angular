@@ -26,7 +26,10 @@ Così facendo posso rendere dinamica una proprietà
 
 <!-- Per usare l'event Binding dobbiamo mettere in nome dell'evento tra parentesi tonde () e poi associarlo all'elemento che ci interessa o il codice che vogliamo eseguire-->
 <br>
-<p> {{serverCreationStatus}}</p>
-
+<!--<p> {{serverCreationStatus}}</p>-->
+<p *ngIf="serverCreated; else noServer">Il server è stato creato, e si chiama {{serverName}}</p>
+<ng-template #noServer>
+  <p>Nessun server creato</p>
+</ng-template>
 <app-server></app-server>
 <app-server></app-server>
